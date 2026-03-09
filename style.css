@@ -200,37 +200,59 @@ a:hover{
 
 @media (max-width:900px){
 
+  @media (max-width:900px){
+
   .side{
     position:fixed;
     top:0;
     bottom:0;
-    width:140px;
-    padding:16px;
+    width:120px;
+    padding:16px 10px;
     border:none;
+    z-index:100;
   }
 
   .left{
     left:0;
+    text-align:left;
   }
 
   .right{
     right:0;
     text-align:right;
+    display:flex;
+    justify-content:flex-end;
+  }
+
+  .right .side-inner{
+    align-items:flex-end;
+    text-align:right;
   }
 
   .center{
-    margin-left:150px;
-    margin-right:150px;
-    padding:0 12px;
+    margin-left:120px;
+    margin-right:120px;
+    padding:0 10px;
   }
+
+  .side-title img{
+    width:90px;
+  }
+
   .nav{
-  font-size:14px;
-}
+    font-size:13px;
+    gap:9px;
+  }
 
-.credit{
-  font-size:12px;
-}
+  .credit-title{
+    margin-top:24px;
+    font-size:13px;
+  }
 
+  .credit{
+    font-size:11px;
+    line-height:1.6;
+  }
 }
 
 }
