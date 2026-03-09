@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bts — SHIO:RI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 왼쪽 메뉴 -->
+  <aside class="side left">
+    <div class="side-inner">
+      <a href="index.html" class="side-title">
+        <img src="title.svg" alt="SHIO:RI logo">
+      </a>
+
+      <nav class="nav">
+        <a href="About.html">About</a>
+        <a href="IntroductionText.html">Text</a>
+        <a href="Works.html">Works</a>
+        <br>
+        <a href="Bts.html">Bts</a>
+        <a href="ArtistsNotes.html">Artists' Notes</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- 가운데 컨텐츠 -->
+  <main class="center">
+    <section class="block bts-page">
+      <div class="text">
+        <h2>Bts cuts</h2>
+        
+      </div>
+
+      <div class="bts-feed" id="btsFeed"></div>
+    </section>
+  </main>
+  <br>
+
+  <script>
+    const feed = document.getElementById("btsFeed");
+
+    const imageList = [];
+    for (let i = 0; i <= 20; i++) {
+      if (i === 8) continue;
+      imageList.push(`btscut/b${i}.jpeg`);
+    }
+
+    const positionClasses = ["left", "mid-left", "center", "mid-right", "right"];
+    const widthClasses = ["size-s", "size-m", "size-l"];
+
+    imageList.forEach((file, index) => {
+      const figure = document.createElement("figure");
+      figure.className = "bts-item reveal";
+
+      figure.classList.add(positionClasses[index % positionClasses.length]);
+      figure.classList.add(widthClasses[index % widthClasses.length]);
+
+      const img = document.createElement("img");
+      img.src = file;
+      img.alt = `Bts image ${index}`;
+      img.className = "bts-img";
+      img.loading = "lazy";
+
+      figure.appendChild(img);
+      feed.appendChild(figure);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
