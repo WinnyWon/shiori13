@@ -1,0 +1,876 @@
+@import url("https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css");
+
+body{
+  font-family: "Pretendard", sans-serif;
+}
+
+:root{
+  --bg:#000;
+  --fg:#fff;
+  --typo:#8EACAD;
+  --sideW:260px;
+  --gap:28px;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:system-ui, -apple-system, "Pretendard", sans-serif;
+  cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27'%3E%3Ccircle cx='13.5' cy='13.5' r='6.5' fill='%238EACAD'/%3E%3C/svg%3E") 13.5 13.5, auto;
+}
+
+a,
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+a:hover{
+  opacity:.75;
+}
+
+/* 좌/우 고정 사이드 */
+.side{
+  position:fixed;
+  top:0;
+  bottom:0;
+  width:var(--sideW);
+  padding:28px 22px;
+  pointer-events:auto;
+}
+
+.side-inner{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.left{
+  left:0;
+}
+
+.right{
+  right:0;
+  text-align:right;
+}
+
+.side-title{
+  font-weight:600;
+  letter-spacing:.02em;
+  opacity:.9;
+}
+
+.side-title img{
+  width:140px;
+  height:auto;
+  display:block;
+}
+
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+  font-size:16px;
+  opacity:.9;
+}
+
+.credit-title{
+  font-size:16px;
+  opacity:.7;
+  margin-top:78px;
+}
+
+.credit{
+  font-size:14px;
+  line-height:1.7;
+  opacity:.9;
+}
+
+.role{
+  color:var(--typo);
+}
+
+/* 가운데 스크롤 영역 */
+.center{
+  margin-left:calc(var(--sideW) + var(--gap));
+  margin-right:calc(var(--sideW) + var(--gap));
+  min-height:100vh;
+}
+
+/* 기본 섹션 */
+.block{
+  padding:6vh 0;
+  border-top:1px solid rgba(255,255,255,.18);
+}
+
+/* 메인 타이포 섹션 */
+#typo,
+#hero{
+  padding-top:10vh;
+  padding-bottom:1vh;
+  border-top:none;
+}
+
+.typo-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:2vh 0 0.5vh;
+}
+
+.typo-svg{
+  width:min(900px, 100%);
+  height:auto;
+  display:block;
+}
+
+/* 영상 섹션 */
+#video,
+#works{
+  padding-top:1vh;
+}
+
+.video-wrap{
+  width:min(900px, 100%);
+  margin:0 auto;
+}
+
+.video{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:10px;
+  background:#111;
+}
+
+.caption{
+  margin:12px 0 0;
+  font-size:13px;
+  opacity:.75;
+}
+
+/* 텍스트 섹션 */
+.text{
+  width:min(900px, 100%);
+  margin:0 auto;
+}
+
+.text h2{
+  margin:0 0 10px;
+  font-size:18px;
+}
+
+.text p{
+  margin:0;
+  font-size:14px;
+  line-height:1.7;
+  opacity:.9;
+}
+
+/* About 페이지 영어 문단만 작고 흐리게 */
+.text p:lang(en){
+  font-size:0.92em;
+  opacity:.65;
+}
+
+/* lang 속성 안 쓴 경우 대비 */
+.text p.en{
+  font-size:0.92em;
+  opacity:.65;
+}
+
+/* 참여진 */
+.members{
+  opacity:.7;
+}
+
+/* 시오리 의미 섹션 */
+.shiori-meaning{
+  margin-top:30px;
+  max-width:700px;
+}
+
+.shiori-logo{
+  margin:20px 0 12px 0;
+  max-width:700px;
+}
+
+.shiori-logo img{
+  width:220px;
+  display:block;
+  margin:0 0 10px 0;
+}
+
+/* 로고 캡션 */
+.logo-caption{
+  font-size:14px;
+  line-height:1.6;
+  color:#fff;
+  opacity:1;
+}
+
+.logo-caption p{
+  margin:6px 0;
+  color:#fff;
+  opacity:1;
+}
+
+.caption-title{
+  margin-bottom:6px;
+  color:#fff;
+  opacity:1;
+}
+
+.caption-en{
+  margin-top:6px;
+  font-size:14px;
+  color:#fff;
+  opacity:1;
+}
+
+/* 시오리 설명 블록 */
+.shiori-text p{
+  margin:14px 0;
+  line-height:1.7;
+}
+
+/* SHIO:RI / 15.ri 라인만 살짝 작게 */
+.shiori-text .shiori-en{
+  font-size:0.92em;
+  opacity:.75;
+}
+
+.shiori-row{
+  display:flex;
+  gap:60px;
+  align-items:flex-start;
+  margin-top:40px;
+}
+
+.shiori-name{
+  min-width:120px;
+}
+
+.shiori-name p{
+  margin:6px 0;
+}
+
+.shiori-desc{
+  max-width:520px;
+}
+
+.shiori-desc p{
+  margin:10px 0;
+  line-height:1.7;
+}
+
+/* 모바일 */
+@media (max-width:900px){
+  :root{
+    --sideW:0px;
+    --gap:0px;
+  }
+
+  .side{
+    position:static;
+    width:auto;
+    padding:16px;
+    border-bottom:1px solid rgba(255,255,255,.18);
+    text-align:left;
+  }
+
+  .right{
+    text-align:left;
+  }
+
+  .center{
+    margin:0;
+    padding:0 16px;
+  }
+
+  .credit-title{
+    margin-top:24px;
+  }
+
+  .side-title img{
+    width:120px;
+  }
+
+  .shiori-row{
+    flex-direction:column;
+    gap:20px;
+    margin-top:28px;
+  }
+
+  .shiori-name{
+    min-width:auto;
+  }
+
+  .shiori-desc{
+    max-width:100%;
+  }
+}
+
+/* Artists Notes */
+
+.note-page{
+  border-top:none;
+  padding-top:10vh;
+}
+
+.note-page .text{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.note-image{
+  width:48%;
+  max-width:480px;
+  height:auto;
+  display:block;
+  margin:40px auto;
+}
+
+.note-page{
+  border-top:none;
+  padding-top:10vh;
+}
+
+.notes-feed{
+  width:100%;
+  margin-top:40px;
+}
+
+.note-item{
+  width:100%;
+  margin:0 0 8vh 0;
+}
+
+/* 이미지 원본 비율 유지 */
+.note-img{
+  display:block;
+  width:auto;
+  max-width:min(48vw, 680px);
+  height:auto;
+  object-fit:contain;
+}
+
+/* 크기만 다르게 */
+.note-item.size-s .note-img{
+  max-width:min(28vw, 360px);
+}
+
+.note-item.size-m .note-img{
+  max-width:min(38vw, 520px);
+}
+
+.note-item.size-l .note-img{
+  max-width:min(48vw, 680px);
+}
+
+/* 위치 */
+.note-item.left{
+  padding-left:4%;
+}
+
+.note-item.mid-left{
+  padding-left:16%;
+}
+
+.note-item.center{
+  display:flex;
+  justify-content:center;
+}
+
+.note-item.mid-right{
+  display:flex;
+  justify-content:flex-end;
+  padding-right:16%;
+}
+
+.note-item.right{
+  display:flex;
+  justify-content:flex-end;
+  padding-right:4%;
+}
+
+/* 등장 */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (max-width:900px){
+  .note-page .text{
+    margin-bottom:36px;
+  }
+
+  .note-item,
+  .note-item.left,
+  .note-item.mid-left,
+  .note-item.center,
+  .note-item.mid-right,
+  .note-item.right{
+    display:block;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .note-img,
+  .note-item.size-s .note-img,
+  .note-item.size-m .note-img,
+  .note-item.size-l .note-img{
+    width:auto;
+    max-width:100%;
+    height:auto;
+    margin:0 auto;
+  }
+}
+
+/* -------------------- */
+/* BTS page */
+/* -------------------- */
+
+.bts-page{
+  border-top:none;
+  padding-top:10vh;
+}
+
+.bts-page .text{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.bts-feed{
+  width:100%;
+  margin-top:20px;
+}
+
+.bts-item{
+  width:100%;
+  margin:0 0 8vh 0;
+}
+
+.bts-img{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+/* 크기 */
+.bts-item.size-s .bts-img{
+  width:min(28vw, 360px);
+}
+
+.bts-item.size-m .bts-img{
+  width:min(38vw, 520px);
+}
+
+.bts-item.size-l .bts-img{
+  width:min(48vw, 680px);
+}
+
+/* 위치 */
+.bts-item.left{
+  padding-left:4%;
+}
+
+.bts-item.mid-left{
+  padding-left:16%;
+}
+
+.bts-item.center{
+  display:flex;
+  justify-content:center;
+}
+
+.bts-item.mid-right{
+  display:flex;
+  justify-content:flex-end;
+  padding-right:16%;
+}
+
+.bts-item.right{
+  display:flex;
+  justify-content:flex-end;
+  padding-right:4%;
+}
+
+/* 등장 애니메이션 */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (max-width:900px){
+  .bts-page .text{
+    margin-bottom:36px;
+  }
+
+  .bts-item,
+  .bts-item.left,
+  .bts-item.mid-left,
+  .bts-item.center,
+  .bts-item.mid-right,
+  .bts-item.right{
+    display:block;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .bts-item.size-s .bts-img,
+  .bts-item.size-m .bts-img,
+  .bts-item.size-l .bts-img{
+    width:100%;
+    max-width:100%;
+  }
+
+  .bts-feed .bts-item:first-child.size-s .bts-img,
+  .bts-feed .bts-item:first-child.size-m .bts-img,
+  .bts-feed .bts-item:first-child.size-l .bts-img{
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
+
+.bts-feed .bts-item:first-child.size-s .bts-img,
+.bts-feed .bts-item:first-child.size-m .bts-img,
+.bts-feed .bts-item:first-child.size-l .bts-img{
+  width:min(40vw, 500px) !important;
+  max-width:none !important;
+  height:auto !important;
+}
+
+/* -------------------- */
+/* Works page */
+/* -------------------- */
+
+.works-page{
+  border-top:none;
+  padding-top:10vh;
+}
+
+.works-title{
+  text-align:center;
+  margin-bottom:56px;
+}
+
+.floor-container{
+  width:min(1800px,100%);
+}
+
+.floor-img{
+  width:100%;
+  max-width:1200px;
+  height:auto;
+  display:block;
+}
+
+.floor-block{
+  flex:1;
+  max-width:1000px;
+}
+
+.floor-label{
+  font-size:24px;
+  margin-bottom:18px;
+}
+
+.map-wrap{
+  position:relative;
+  width:100%;
+}
+
+/* 이름 위에 덮이는 반투명 hotspot */
+.hotspot-circle{
+  position:absolute;
+  display:block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 6px rgba(255,255,255,0.7);
+  transform:translate(-50%,-50%);
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease;
+  z-index:10;
+}
+
+.hotspot-circle:hover{
+  transform:translate(-50%,-50%) scale(1.8);
+  box-shadow:0 0 10px rgba(255,255,255,0.9);
+}
+
+.gaeun{ left:48%; top:38%; }
+.minju{ left:66%; top:33%; }
+.minjung{ left:84%; top:37%; }
+.eunkyeong{ left:65%; top:47%; }
+.junghyun{ left:84%; top:51%; }
+.dahye{ left:52%; top:58%; }
+.minseo{ left:32%; top:68%; }
+.soohyun{ left:25%; top:76%; }
+.yeonwoo{ left:67%; top:67%; }
+.sooa{ left:86%; top:64%; }
+.seoyong{ left:68%; top:82%; }
+.jaeyoon{ left:82%; top:78%; }
+
+/* 2F hotspot positions */
+.inwoo{
+  left:50%;
+  top:27%;
+}
+
+.yelim{
+  left:37%;
+  top:49%;
+}
+
+.juntae{
+  left:22%;
+  top:58%;
+}
+
+.hyejin{
+  left:20%;
+  top:84%;
+}
+
+@media (max-width:900px){
+  .works-title{
+    margin-bottom:36px;
+  }
+
+  .floor-container{
+    width:100%;
+  }
+
+  .floor-block{
+    max-width:100%;
+    margin-bottom:40px;
+  }
+
+  .floor-label{
+    font-size:20px;
+    margin-bottom:14px;
+  }
+
+  .floor-img{
+    max-width:100%;
+  }
+
+  .hotspot-circle{
+    width:12px;
+    height:12px;
+  }
+}
+
+/* -------------------- */
+/* Artist detail pages  */
+/* -------------------- */
+
+.artist-page{
+  max-width:1200px;
+  margin:auto;
+}
+
+.artist-images{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:1fr;
+  gap:20px;
+  margin-bottom:40px;
+  align-items:start;
+}
+
+.artist-images img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+}
+
+.artist-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:32px;
+  margin-top:28px;
+}
+
+.artist-meta-left{
+  max-width:60%;
+}
+
+/* 작품 제목 */
+.artist-work-title{
+  margin:0 0 8px;
+  font-size:28px;
+  line-height:1.1;
+  font-weight:500;
+  letter-spacing:-0.02em;
+}
+
+/* 재료 */
+.artist-material{
+  margin:0;
+  font-size:14px;
+  line-height:1.5;
+  opacity:.85;
+}
+
+/* 작가 정보 */
+.artist-meta-right{
+  text-align:right;
+  min-width:200px;
+}
+
+.artist-name{
+  margin:0 0 6px;
+  font-size:18px;
+  line-height:1.5;
+}
+
+.artist-contact{
+  margin:0;
+  font-size:14px;
+  line-height:1.7;
+  opacity:.9;
+}
+
+/* 구분선 */
+.artist-line{
+  width:100%;
+  height:1px;
+  background:rgba(255,255,255,.85);
+  margin:28px 0 30px;
+}
+
+/* 캡션 */
+.artist-caption{
+  max-width:1300px;
+}
+
+.artist-caption p{
+  margin:0;
+  font-size:16px;
+  line-height:1.7;
+  letter-spacing:-0.01em;
+}
+
+/* Works로 돌아가기 */
+.artist-back{
+  display:inline-block;
+  margin-bottom:18px;
+  font-size:20px;
+  opacity:.75;
+}
+
+.artist-back:hover{
+  opacity:1;
+}
+
+.intro-images{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:80px;
+}
+
+.intro-images img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* 모바일 */
+@media (max-width:900px){
+  .artist-page{
+    padding:80px 20px 80px;
+  }
+
+  .artist-images{
+    grid-auto-flow:row;
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-bottom:28px;
+  }
+
+  .artist-meta{
+    flex-direction:column;
+    gap:16px;
+    margin-top:20px;
+  }
+
+  .artist-meta-left{
+    max-width:100%;
+  }
+
+  .artist-meta-right{
+    text-align:left;
+    min-width:auto;
+  }
+
+  .artist-work-title{
+    font-size:26px;
+  }
+
+  .artist-material{
+    font-size:13px;
+  }
+
+  .artist-name{
+    font-size:16px;
+  }
+
+  .artist-contact{
+    font-size:13px;
+  }
+
+  .artist-caption p{
+    font-size:15px;
+  }
+
+  .artist-line{
+    margin:22px 0 24px;
+  }
+
+  .artist-back{
+    font-size:18px;
+    margin-bottom:14px;
+  }
+
+  .intro-images{
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-top:48px;
+  }
+}
