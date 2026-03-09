@@ -259,39 +259,43 @@ a:hover{
 
 @media (max-width:900px){
 
-  .side{
-    position:fixed !important;
+  /* 왼쪽 메뉴는 그대로 고정 */
+  .side.left{
+    position:fixed;
     top:0;
     bottom:0;
+    left:0;
     width:120px;
-    padding:20px 10px;
-    z-index:1000;
+    padding:16px 10px;
+    z-index:100;
   }
 
-  .left{
-    left:0 !important;
+  /* 오른쪽 credit은 고정 해제 */
+  .side.right{
+    position:static;
+    width:auto;
+    padding:40px 16px;
+    margin-left:120px;
     text-align:left;
   }
 
-  .right{
-    right:0 !important;
-    text-align:right;
-    display:flex;
-    justify-content:flex-end;
-  }
-
   .right .side-inner{
-    align-items:flex-end;
-    text-align:right;
+    align-items:flex-start;
+    text-align:left;
   }
 
+  /* 중앙 콘텐츠 */
   .center{
-    margin-left:120px !important;
-    margin-right:120px !important;
-    padding:0 12px;
+    margin-left:120px;
+    margin-right:0;
+    padding:0 16px;
   }
 
 }
+
+
+
+
 /* 시오리 의미 섹션 */
 .shiori-meaning{
   margin-top:30px;
